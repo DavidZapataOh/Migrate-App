@@ -227,11 +227,7 @@ const App = () => {
                   <p>{selectedToken === 'CRT' ? crtPolygonBalance : bxtPolygonBalance} {selectedToken}</p>
               </div>
               <div className="wallet-field">
-                <div>
-                  <button onClick={() => setShowWalletField(!showWalletField)}>
-                    {showWalletField ? 'Ocultar Wallet' : 'Especificar Wallet'}
-                  </button>
-                </div>
+                
                 
                 {showWalletField && (
                   <div className="migrate-box">
