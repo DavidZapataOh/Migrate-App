@@ -14,14 +14,13 @@ import {
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import {
     polygon,
-    polygonMumbai,
   } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 
 const projectId = process.env.REACT_APP_PROJECT_ID;
 
   const {chains, publicClient, webSocketPublicClient} = configureChains(
-    [polygon, polygonMumbai],
+    [polygon],
     [publicProvider()]
   );
 
