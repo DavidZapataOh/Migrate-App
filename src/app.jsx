@@ -75,7 +75,7 @@ const App = () => {
     try {
       await window?.ethereum?.request({
         method: 'wallet_switchEthereumChain',
-        params: [{ chainId: "0x13881"}], // 0x13881  es el chainId para Polygon
+        params: [{ chainId: "0x89"}], // 0x13881  es el chainId para Mumbai
       });
     } catch (switchError) {
       console.error(switchError);
@@ -86,7 +86,7 @@ const App = () => {
   
   // Cargar balance de CRT cuando la cuenta o la red cambien
   useEffect(() => {
-    if (isConnected && currentChainId === 80001n) {
+    if (isConnected && currentChainId === 137n) {
       loadTokenBalance();
     }
   }, [address, isConnected, currentChainId, selectedToken]);
@@ -112,7 +112,7 @@ const App = () => {
     let contractAbi;
   
     if (selectedToken === 'CRT') {
-      contractAddress = '0xc8C06a58E4ad7c01b9bb5Af6C76a7a1CfEBd0319'; // Dirección de CRT
+      contractAddress = '0x3deC4aA8bC74fC3289A7BDaffAfDB43385836A7A'; // Dirección de CRT
       contractAbi = crtPolygonContractAbi;
     } else if (selectedToken === 'BXT') {
       contractAddress = '0x133f734BD21198a60B6f5B6e5Ed08dDf3e357112'; // Dirección de BXT
@@ -136,19 +136,19 @@ const App = () => {
 
   // Función para migrar tokens CRT
   const migrateTokens = async () => {
-    if (!isConnected || currentChainId !== 80001n) {
+    if (!isConnected || currentChainId !== 137n) {
       return;
     }
 
     let contractAbi, contractAddress, migrateContractAddress;
     if (selectedToken === 'CRT') {
       contractAbi = crtAvalancheContractAbi;
-      contractAddress = '0xc8C06a58E4ad7c01b9bb5Af6C76a7a1CfEBd0319'; // Dirección de CRT
-      migrateContractAddress = '0xDe04de0FA2eC8057E0f0b5a4ABe3a75e5fF4bB98';
+      contractAddress = '0x3deC4aA8bC74fC3289A7BDaffAfDB43385836A7A'; // Dirección de CRT
+      migrateContractAddress = '0x27447D945B348d7494AfcE1039E48355b72e7fDC';
     } else if (selectedToken === 'BXT') {
       contractAbi = crtPolygonContractAbi; // ABI de BXT
       contractAddress = '0x133f734BD21198a60B6f5B6e5Ed08dDf3e357112'; // Dirección de BXT
-      migrateContractAddress = '0xAE3fc22D0302d95Eb75a8C84e5C81510eb83C276';
+      migrateContractAddress = '0xDfAf5083622223F7e960B40Cb39a3F06CaD1Dc36';
     }
   
     const web3 = new Web3(window.ethereum);
@@ -190,7 +190,7 @@ const App = () => {
 
       // Mensaje de éxito personalizado dependiendo del token seleccionado
       if (selectedToken === 'CRT') {
-        setMigrationMessage("Migración exitosa! Agrega el token: 0xcRt");
+        setMigrationMessage("Migración exitosa! Agrega el token: 0xbB3EC3c4Eb0Ff59A57AC2F6a93514fbf530928f3");
       } else if (selectedToken === 'BXT') {
         setMigrationMessage("Migración exitosa! Agrega el token: 0xbXt");
       }
@@ -214,11 +214,11 @@ const App = () => {
       </Navbar>
       {isConnected && (
         <div className="parent-container">
-          {currentChainId === 80001n ? (
+          {currentChainId === 137n ? (
             <div className="container">
               <div className="token-selector">
                 <button className="token-button" onClick={() => setSelectedToken('CRT')}>CRT</button>
-                <button className="token-button" onClick={() => setSelectedToken('BXT')}>BXT</button>
+                
               </div>
               <h1 className="title">¡AVALANCHE TE ESPERA!</h1>
         

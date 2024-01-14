@@ -193,10 +193,6 @@ input:focus {
     margin-right: 20px; /* Ajustar margen derecho */
   }
 
-  .container {
-    
-  }
-
   .parent-container {
     min-height: auto; /* Ajustar la altura mínima */
     width: 90%; /* Hacer el contenedor más ancho para pantallas pequeñas */
