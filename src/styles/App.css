@@ -1,0 +1,217 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.account{
+  background-color: #202020;
+  color: #ffffff;
+  border: none;
+}
+
+.metamask-button {
+  color: white; /* Color del texto */
+  border-color: white;
+  font-size: 20px;
+  /* otros estilos que desees agregar, como padding, border-radius, etc. */
+}
+
+.metamask-button:hover {
+  background-color: #202020; /* Color de fondo al hacer hover */
+  color: white;
+  border-color: #ffffff;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-custom {
+  background-image: linear-gradient(45deg,#7462ff, #d2001a);
+  box-shadow: 0 4px 8px 3px rgba(10, 10, 10, 0.3);
+  height: 10%;
+}
+
+.bgd{
+  height: 100%;
+  width: 100%;
+
+  background-size: 100%;
+  
+}
+
+.navbar-custom .navbar-brand {
+  margin-left: 80px; /* Ajusta este valor según necesites */
+  font-size: 28px;
+  
+}
+
+.button-container {
+  margin-right: 80px; /* Ajusta este valor según tus preferencias */
+}
+
+.container {
+  border: 1px solid #a0349354;
+  box-shadow: 0 0 50px 20px rgba(160, 52, 147, 0.1);
+  background-color: #202020;
+  border-radius: 15px;
+  padding: 40px;
+  
+  color: #ffffff;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente si es necesario */
+  align-items: center; /* Centra verticalmente */
+  min-height: 90vh; /* Altura mínima del 100% del viewport */
+  width: 40%;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+}
+.migrate-box {
+  background-color: #303030; 
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.migrate-box p {
+  text-align: center;
+  margin-top: 0;
+  font-size: 25px;
+}
+.migrate-box .total-migrate {
+  font-size: 1.2em;
+  text-align: center;
+}
+.migrate-button {
+  background: linear-gradient(-45deg,#d2001a, #7462ff);
+  color: #202020;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  font-weight: 600;
+  transition: background 0.5s ease;
+  font-size: 20px;
+}
+
+.migrate-button:hover {
+  background: linear-gradient(-45deg,#d2001a, #d2001a);
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.input-box {
+  background-color: transparent !important;
+  width: 100%;
+  color: #ffffff; /* Color de texto blanco */
+  border: none; /* Sin bordes */
+  border-bottom: 1px solid #ffffff; /* Opcional: añade un borde inferior para mejor visualización */
+  
+}
+
+input:focus {
+  outline: none;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.token-selector {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.token-button {
+  background: linear-gradient(-45deg, #7462ff, #d2001a);
+  color: #ffffff;
+  padding: 10px 15px;
+  border: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.token-button:hover {
+  background: linear-gradient(-45deg, #7462ff, #7462ff);
+}
+
+.token-button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-custom .navbar-brand {
+    margin-left: 20px; /* Reducir margen para pantallas pequeñas */
+    font-size: 22px; /* Tamaño de fuente más pequeño */
+  }
+
+  .button-container {
+    margin-right: 20px; /* Ajustar margen derecho */
+  }
+
+  .container {
+    
+  }
+
+  .parent-container {
+    min-height: auto; /* Ajustar la altura mínima */
+    width: 90%; /* Hacer el contenedor más ancho para pantallas pequeñas */
+    padding: 20px; /* Reducir el padding */
+  }
+
+  .title {
+    font-size: 22px; /* Reducir el tamaño de fuente del título */
+  }
+
+  .migrate-box p {
+    font-size: 18px; /* Reducir el tamaño de fuente de los párrafos */
+  }
+
+  .migrate-button {
+    font-size: 16px; /* Reducir el tamaño de fuente del botón */
+  }
+}
