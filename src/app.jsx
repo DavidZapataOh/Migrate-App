@@ -168,16 +168,18 @@ const App = () => {
         console.log("Approve Tx:", approveTx);
       }
 
-      if (showWalletField && walletAddress) {
+      if (showWalletField) {
         // Validar dirección de la wallet
         if (!web3.utils.isAddress(walletAddress)) {
           setMigrationMessage("La wallet que ingresaste no es correcta");
           return;
+        } else{
+          setMigrationMessage("");
+          // Llamada a la función de migración con la dirección de la wallet
+          const migrateTx = await migrateContract.methods.migrateCustomWallet(walletAddress).send({ from: address });
+          console.log("Migrate Tx to Address:", migrateTx);
         }
-        setMigrationMessage("");
-        // Llamada a la nueva función de migración con la dirección de la wallet
-        const migrateTx = await migrateContract.methods.migrateCustomWallet(walletAddress).send({ from: address });
-        console.log("Migrate Tx to Address:", migrateTx);
+        
       } else {
         // Llamada a la función de migración original
         const migrateTx = await migrateContract.methods.migrate().send({ from: address });
@@ -186,7 +188,7 @@ const App = () => {
 
       setTimeout(() => {
         loadTokenBalance();
-      }, 3000);
+      }, 5000);
 
       // Mensaje de éxito personalizado dependiendo del token seleccionado
       if (selectedToken === 'CRT') {
@@ -227,7 +229,11 @@ const App = () => {
                   <p>{selectedToken === 'CRT' ? crtPolygonBalance : bxtPolygonBalance} {selectedToken}</p>
               </div>
               <div className="wallet-field">
-                
+                <div>
+                  <button onClick={() => setShowWalletField(!showWalletField)}>
+                    {showWalletField ? 'Ocultar Wallet' : 'Especificar Wallet'}
+                  </button>
+                </div>
                 
                 {showWalletField && (
                   <div className="migrate-box">
