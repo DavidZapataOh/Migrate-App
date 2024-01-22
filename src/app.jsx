@@ -115,7 +115,7 @@ const App = () => {
       contractAddress = '0x3deC4aA8bC74fC3289A7BDaffAfDB43385836A7A'; // Dirección de CRT
       contractAbi = crtPolygonContractAbi;
     } else if (selectedToken === 'BXT') {
-      contractAddress = '0x133f734BD21198a60B6f5B6e5Ed08dDf3e357112'; // Dirección de BXT
+      contractAddress = '0x8616852A6B1e2E7D2DdFF80D04663EBc1b5fD0e0'; // Dirección de BXT
       contractAbi = crtPolygonContractAbi; // ABI de BXT
     }
   
@@ -147,7 +147,7 @@ const App = () => {
       migrateContractAddress = '0x27447D945B348d7494AfcE1039E48355b72e7fDC';
     } else if (selectedToken === 'BXT') {
       contractAbi = crtPolygonContractAbi; // ABI de BXT
-      contractAddress = '0x133f734BD21198a60B6f5B6e5Ed08dDf3e357112'; // Dirección de BXT
+      contractAddress = '0x8616852A6B1e2E7D2DdFF80D04663EBc1b5fD0e0'; // Dirección de BXT
       migrateContractAddress = '0xDfAf5083622223F7e960B40Cb39a3F06CaD1Dc36';
     }
   
@@ -194,13 +194,13 @@ const App = () => {
       if (selectedToken === 'CRT') {
         setMigrationMessage("Migración exitosa! Agrega el token: 0xbB3EC3c4Eb0Ff59A57AC2F6a93514fbf530928f3");
       } else if (selectedToken === 'BXT') {
-        setMigrationMessage("Migración exitosa! Agrega el token: 0xbXt");
+        setMigrationMessage("Migración exitosa! Agrega el token: 0xc8C06a58E4ad7c01b9bb5Af6C76a7a1CfEBd0319");
       }
       
   
     } catch (error) {
       console.error('Error al migrar tokens:', error);
-      setMigrationMessage("Hubo un fallo en la migración, intenta nuevamente.");
+      setMigrationMessage("La migracion está tardando más de lo normal, espera unos minutos y revisa tu wallet.");
     }
   };
 
@@ -220,6 +220,7 @@ const App = () => {
             <div className="container">
               <div className="token-selector">
                 <button className="token-button" onClick={() => setSelectedToken('CRT')}>CRT</button>
+                <button className="token-button" onClick={() => setSelectedToken('BXT')}>BXT</button>
                 
               </div>
               <h1 className="title">¡AVALANCHE TE ESPERA!</h1>
