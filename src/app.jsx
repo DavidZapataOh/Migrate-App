@@ -258,7 +258,10 @@ const App = () => {
               </div>
             </div>
           ) : (
-            <p className='text-light'>Por favor, conecta Metamask a la red de Polygon para realizar la migración.</p>
+            <div>
+              <p className='text-light'>Por favor, conecta Metamask a la red de Polygon para realizar la migración.</p>
+              <p className='text-light'>Recuerda desactivar la extensión de Core Wallet.</p>
+            </div>
           )}
         </div>
       )}
