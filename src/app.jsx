@@ -23,7 +23,7 @@ const App = () => {
   const [walletAddress, setWalletAddress] = useState('');
   const [showWalletField, setShowWalletField] = useState(false);
 
-  const [selectedToken, setSelectedToken] = useState('CRT'); // 'CRT' o 'BXT'
+  const [selectedToken, setSelectedToken] = useState('BXT'); // 'CRT' o 'BXT'
   const [bxtPolygonBalance, setBxtPolygonBalance] = useState('0');
   const [crtPolygonBalance, setCrtPolygonBalance] = useState('0');
   const [isMigrateDisabled, setIsMigrateDisabled] = useState(true);
@@ -212,14 +212,13 @@ const App = () => {
         <Nav className="mr-auto"></Nav>
         <div className="button-container">
               <ConnectButton />
-            </div>
+        </div>
       </Navbar>
       {isConnected && (
         <div className="parent-container">
           {currentChainId === 137n ? (
             <div className="container">
               <div className="token-selector">
-                <button className="token-button" onClick={() => setSelectedToken('CRT')}>CRT</button>
                 <button className="token-button" onClick={() => setSelectedToken('BXT')}>BXT</button>
                 
               </div>
